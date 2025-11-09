@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
+// @ts-expect-error ignore
 import './globals.css';
 
 const defaultUrl = process.env.VERCEL_URL
@@ -26,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" suppressHydrationWarning>
-      <body className={`${MontserratFont.className} antialiased`}>
+      <body
+        className={`${MontserratFont.className} overflow-x-hidden antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
