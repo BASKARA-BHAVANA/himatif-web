@@ -15,7 +15,7 @@ const Page = async (props: {
   const to = from + limit - 1;
   const courses = await supabase
     .from('courses')
-    .select('id, title, slug, tags', { count: 'exact' })
+    .select('id, title, slug, tags, courses(id)', { count: 'exact' })
     .or(`title.ilike.%${search}%,tags.ilike.%${search}%`)
     .limit(limit)
     .range(from, to);
@@ -26,7 +26,7 @@ const Page = async (props: {
         <div className="mb-12 flex flex-col items-center -space-y-3">
           <div className="flex items-center gap-3 rounded-lg bg-primary p-3">
             <p className="typo-large rounded-sm bg-primary-foreground px-2 text-primary">
-              Materi Belajar
+              Bridging Informatics
             </p>
           </div>
           <h1 className="typo-h1 w-fit rounded-lg bg-primary p-3 text-center">
@@ -44,7 +44,7 @@ const Page = async (props: {
         </form>
       </Container>
 
-      <Container className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <Container className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {courses.data?.map((dat, i) => (
           <CourseCard key={i} data={dat} />
         ))}

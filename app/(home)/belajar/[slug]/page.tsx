@@ -42,7 +42,7 @@ const Page = async (props: { params: Promise<{ slug: string }> }) => {
               className="relative top-1 text-muted-foreground"
             />
             <small className="typo-small text-muted-foreground">
-              Turunan dari materi
+              Submateri dari
             </small>
             <Link href={`/belajar/${course.data.parent.slug}`}>
               <Badge variant={'secondary'} className="cursor-pointer">
@@ -76,7 +76,7 @@ const Page = async (props: { params: Promise<{ slug: string }> }) => {
         <div className="lg:w-1/3">
           <Card className="mb-3">
             <CardHeader>
-              <CardTitle>Materi terkait</CardTitle>
+              <CardTitle>Submateri</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col gap-3">
               <List>

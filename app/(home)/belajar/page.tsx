@@ -14,7 +14,7 @@ const Page = () => {
       <div className="mb-12 flex flex-col items-center -space-y-3">
         <div className="flex items-center gap-3 rounded-lg bg-primary p-3">
           <p className="typo-large rounded-sm bg-primary-foreground px-2 text-primary">
-            Materi Belajar
+            Bridging Informatics
           </p>
         </div>
         <h1 className="typo-h1 w-fit rounded-lg bg-primary p-3 text-center">
