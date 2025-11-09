@@ -4,6 +4,7 @@ import { ThemeProvider } from 'next-themes';
 // @ts-expect-error ignore
 import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
+import { ScrollToTop } from '@/components/molecules/scrolls';
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -37,6 +38,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <ScrollToTop />
           {children}
           <Toaster position="top-right" />
         </ThemeProvider>
