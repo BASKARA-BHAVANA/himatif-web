@@ -25,7 +25,7 @@ export default async function Layout({
             },
             {
               label: 'Materi belajar',
-              href: '/admin/belajar',
+              href: '/admin/belajar/0',
               icon: <LibraryBigIcon />,
             },
           ]}

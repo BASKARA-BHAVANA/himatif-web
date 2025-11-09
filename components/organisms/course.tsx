@@ -42,9 +42,12 @@ const CourseCard = ({
       </CardHeader>
       <CardContent className="flex grow">
         <div className="mt-auto flex flex-wrap items-end gap-3">
-          {data.tags?.split(',').map((tag, i) => (
-            <Badge key={i}>{tag}</Badge>
-          ))}
+          {data.tags
+            ?.split(',')
+            .filter(Boolean)
+            .map((tag, i) => (
+              <Badge key={i}>{tag}</Badge>
+            ))}
         </div>
       </CardContent>
     </Card>
@@ -64,7 +67,7 @@ const CourseListItem = ({
   return (
     <ListItem
       title={data.title}
-      subtitle={data.tags?.split(',').join(', ') ?? ''}
+      subtitle={data.tags?.split(',').filter(Boolean).join(', ') ?? ''}
       slotRight={
         <>
           <Button variant={'outline'} size={'icon'}>
