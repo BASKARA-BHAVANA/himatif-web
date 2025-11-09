@@ -1,6 +1,8 @@
 import Container from '@/components/molecules/container';
 import { NavigationList } from '@/components/molecules/navigation';
+import { createClient } from '@/lib/supabase/server';
 import { LayoutIcon, LibraryBigIcon, NewspaperIcon } from 'lucide-react';
+import { redirect, RedirectType } from 'next/navigation';
 import React from 'react';
 
 export default async function Layout({
@@ -8,6 +10,14 @@ export default async function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const supabase = await createClient();
+  const roles = await supabase.from('user_roles').select();
+
+  console.log(roles);
+
+  if (!roles.data?.some((d) => d.role == 'admin'))
+    redirect('/', RedirectType.replace);
+
   return (
     <>
       <Container>
