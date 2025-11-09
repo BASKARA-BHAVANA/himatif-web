@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
-// @ts-expect-error ignore
 import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
 import { ScrollToTop } from '@/components/molecules/scrolls';

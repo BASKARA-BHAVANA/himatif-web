@@ -1,7 +1,6 @@
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import moment from 'moment';
-// @ts-expect-error ignore
 import 'moment/locale/id';
 
 export function cn(...inputs: ClassValue[]) {
