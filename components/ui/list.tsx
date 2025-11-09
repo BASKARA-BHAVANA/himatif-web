@@ -44,13 +44,13 @@ const ListItem = ({
   isLoading?: boolean;
 } & ComponentProps<'div'>) => {
   return (
-    <div className={cn('flex items-center gap-2 p-2', className)} {...props}>
-      {slotLeft && <div className="pe-2">{slotLeft}</div>}
+    <div className={cn('flex items-center gap-3 p-3', className)} {...props}>
+      {slotLeft && <div className="pe-3">{slotLeft}</div>}
       <div className="grid grow">
         {isLoading ? (
           <>
-            <div className="skeleton mb-2 h-6 w-3/4" />
-            <div className="skeleton mb-2 h-4 w-full" />
+            <div className="skeleton mb-3 h-6 w-3/4" />
+            <div className="skeleton mb-3 h-4 w-full" />
             <div className="skeleton h-4 w-1/3" />
           </>
         ) : (

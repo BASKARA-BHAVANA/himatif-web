@@ -33,7 +33,7 @@ export default async function Home() {
 
   const articles = await supabase
     .from('articles')
-    .select('title, slug, tags')
+    .select('title, slug, tags, picture_url')
     .limit(5);
 
   return (

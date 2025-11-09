@@ -35,7 +35,7 @@ const Header = () => {
 
         <div className="grow"></div>
 
-        <div className="hidden items-center gap-4 sm:flex">
+        <div className="hidden items-center gap-3 sm:flex">
           <Navs />
         </div>
 

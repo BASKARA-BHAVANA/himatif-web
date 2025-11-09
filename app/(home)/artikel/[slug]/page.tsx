@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { createClient } from '@/lib/supabase/server';
 import { fromNow } from '@/lib/utils';
 import { CalendarDaysIcon, UserPenIcon } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Page = async (props: { params: Promise<{ slug: string }> }) => {
@@ -47,6 +48,17 @@ const Page = async (props: { params: Promise<{ slug: string }> }) => {
 
       <Container className="flex flex-col gap-12 lg:flex-row">
         <div className="lg:w-2/3">
+          {article.data.picture_url && (
+            <div className="mb-6 overflow-hidden rounded-xl">
+              <Image
+                src={article.data.picture_url}
+                alt=""
+                width={1920}
+                height={1080}
+              />
+            </div>
+          )}
+
           <div
             className="ql-editor"
             dangerouslySetInnerHTML={{ __html: article.data.content ?? '' }}
