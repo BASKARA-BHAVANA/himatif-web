@@ -25,7 +25,7 @@ const ExceptionOverlay = ({
       )}
       {...props}
     >
-      <Image src={img ?? UndrawFaq} alt="" className="mb-12 max-w-80" />
+      <Image src={img ?? UndrawFaq} alt="" className="mb-12 max-w-72" />
       <h4 className="typo-h4">{title}</h4>
       <p className="typo-p text-muted-foreground">{subtitle}</p>
       <div className="mt-3 flex flex-wrap gap-3">{children}</div>

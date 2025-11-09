@@ -101,7 +101,7 @@ const EllipsisPagination: React.FC<PaginationProps> = ({
         ) : (
           <Button
             key={idx}
-            variant={item === page ? 'default' : 'ghost'}
+            variant={item == page ? 'default' : 'ghost'}
             onClick={() => changePage(item)}
             className={cn(item === page ? 'pointer-events-none' : '')}
           >

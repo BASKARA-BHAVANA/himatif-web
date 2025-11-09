@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ListItem } from '../ui/list';
 import { ArrowUpRightIcon } from 'lucide-react';
 import { Button } from '../ui/button';
+import { ComponentProps } from 'react';
 
 interface CourseCardProps {
   data: Pick<
@@ -34,23 +35,27 @@ const CourseCard = ({ data }: CourseCardProps) => {
 
 const CourseListItem = ({
   data,
+  slotRight,
   ...props
 }: {
   data: Pick<
     Database['public']['Tables']['courses']['Row'],
     'id' | 'title' | 'tags' | 'slug'
   >;
-} & Partial<typeof ListItem>) => {
+} & Partial<ComponentProps<typeof ListItem>>) => {
   return (
     <ListItem
       title={data.title}
       subtitle={data.tags?.split(',').join(', ') ?? ''}
       slotRight={
-        <Button variant={'outline'} size={'icon'}>
-          <Link href={`/belajar/${data.slug}`} className="hover:underline">
-            <ArrowUpRightIcon />
-          </Link>
-        </Button>
+        <>
+          <Button variant={'outline'} size={'icon'}>
+            <Link href={`/belajar/${data.slug}`}>
+              <ArrowUpRightIcon />
+            </Link>
+          </Button>
+          {slotRight}
+        </>
       }
       {...props}
     />
